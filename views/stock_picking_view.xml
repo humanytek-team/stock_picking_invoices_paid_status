@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+      <record id="view_picking_form_invoices_paid_status" model="ir.ui.view">
+        <field name="name">picking.form.invoices.paid.status</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+
+          <field name="picking_type_id" position="after">                  
+            <field name="invoices_paid"
+                   attrs="{'invisible': [('picking_type_code', '!=', 'outgoing')]}"/>
+          </field>
+
+        </field>
+      </record>
+
+      <record id="view_picking_tree_invoices_paid_status" model="ir.ui.view">
+        <field name="name">picking.tree.invoices.paid.status</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.vpicktree"/>
+        <field name="arch" type="xml">
+
+          <xpath expr="//tree" position="attributes">
+            <attribute name="colors">green:invoices_paid==True</attribute>
+          </xpath>
+
+          <field name="picking_type_id" position="after">
+            <field name="invoices_paid" />
+          </field>
+
+        </field>
+      </record>
+
+    </data>
+</openerp>
