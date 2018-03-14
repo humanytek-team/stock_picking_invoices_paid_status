@@ -22,7 +22,6 @@
         </xpath>
         <field name="picking_type_id" position="after">
           <field name="invoices_paid"/>
-          <field name="invoices_paid_persistent"/>
         </field>
       </field>
     </record>
