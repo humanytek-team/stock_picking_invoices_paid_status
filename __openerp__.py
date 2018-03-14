@@ -4,7 +4,7 @@
 
 {
     'name': 'Add status of sale order invoices to outgoing pickings',
-    'version': '9.0.2.0.0',
+    'version': '9.0.2.0.1',
     'category': 'Stock',
     'author': 'Humanytek',
     'website': "http://www.humanytek.com",
